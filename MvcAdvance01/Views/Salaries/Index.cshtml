@@ -1,0 +1,98 @@
+﻿@model IEnumerable<MvcAdvance01.Models.Salary>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.BaseSalary.levelPrice)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CalcBaseSalary1)
+        </th> 
+
+        <th>
+            @Html.DisplayNameFor(model => model.Personel.Fullname)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.CalcMMorakhsi)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.CalcEzafekar1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CalcGheibat1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CalcKosorat1)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.Porsant)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CalcPayment1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CalcRealPayments1)
+        </th>
+    
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.BaseSalary.levelPrice)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CalcBaseSalary1)
+        </td>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.Personel.Fullname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CalcMMorakhsi)
+        </td>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.CalcEzafekar1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CalcGheibat1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CalcKosorat1)
+        </td>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.Porsant)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CalcPayment1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CalcRealPayments1)
+        </td>
+       
+   
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>

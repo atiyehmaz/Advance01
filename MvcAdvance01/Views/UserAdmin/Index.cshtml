@@ -1,0 +1,36 @@
+﻿@model IEnumerable<MvcAdvance01.Models.ApplicationUser>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>مدیریت نقش های کاربر</h2>
+
+<p>
+    @Html.ActionLink("ایجاد آیتم جدید", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.Label("شناسه کاربری")
+        </th>
+      
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.UserName)
+        </td>
+       
+        <td>
+            @Html.ActionLink("ویرایش", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("جزئیات", "Details", new { id=item.Id }) |
+            @Html.ActionLink("حذف", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>

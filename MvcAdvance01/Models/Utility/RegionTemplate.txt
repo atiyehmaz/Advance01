@@ -1,0 +1,50 @@
+﻿
+
+        #region Configuration
+
+		#endregion Configuration
+
+
+
+
+		 #region Constractor
+
+
+
+        #endregion Constractor
+
+
+
+        #region properties
+
+
+        #endregion properties
+
+
+		
+
+        #region Relation
+
+
+
+        #endregion Relation
+
+	
+
+	  #region Calculators
+
+
+        #endregion Calculators
+
+
+
+
+	using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;	
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+
+   [Required(ErrorMessage="***")
+        ,DisplayName("* ")]

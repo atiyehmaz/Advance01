@@ -1,0 +1,90 @@
+﻿@model IEnumerable<MvcAdvance01.Models.PriceType>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>قیمت گذاری</h2>
+
+<p>
+    @Html.ActionLink("ثبت قیمت گذاری جدید", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CustomerType.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Product.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Factory)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Final)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.calcLicencePriceWhitArzesh)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.calcPromotionWhitArzesh)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.calcRebateWhitArzesh)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.calcKhaleseKharid)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.calcKhalesForush)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.calcSoodeForush)
+        </th>
+       
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CustomerType.Title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Product.Title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Factory)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Final)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.calcLicencePriceWhitArzesh)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.calcPromotionWhitArzesh)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.calcRebateWhitArzesh)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.calcKhaleseKharid)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.calcKhalesForush)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.calcSoodeForush)
+        </td>
+       
+        <td>
+            @Html.ActionLink("ویرایش", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("جزئیات", "Details", new { id=item.ID }) |
+            @Html.ActionLink("حذف", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>

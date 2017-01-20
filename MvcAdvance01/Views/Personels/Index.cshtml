@@ -1,0 +1,32 @@
+﻿@model IEnumerable<MvcAdvance01.Models.Personel>
+
+@{
+    ViewBag.Title = "صفحه نخست کارمندان";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>صفحه نخست کارکنان</h2>
+
+<p>
+    @Html.ActionLink("ایجاد کارمند جدید", "Create")
+</p>
+
+<tbody id="divSearchAjax">
+
+    @Html.Action("_Search", new { keyword=""})
+</tbody>
+
+    @using (Ajax.BeginForm("_Search", new AjaxOptions { UpdateTargetId = "divSearchAjax", LoadingElementId = "DivLoading", InsertionMode = InsertionMode.Replace }))
+    {
+
+        <div id="DivLoading"></div>
+        
+        <div>
+          
+            <button type="submit" class="btn btn-success">جستجو براساس نام کارمند</button>
+        @Html.TextBox("keyword")
+        </div>
+    }
+    
+    
+
